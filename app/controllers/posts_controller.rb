@@ -23,12 +23,12 @@ class PostsController < ApplicationController
 end
 
 def edit
-    @post = Post.find(post_params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params[:post])
       flash[:notice] = "Post was updated."
       redirect_to @post
     else
@@ -38,10 +38,8 @@ def edit
   end
 
 private
-  def post_params
-    params.permit!
+def post_params
+    params.require(:post).permit(:title, :body)
   end
 
-  def edit
-  end
 end
