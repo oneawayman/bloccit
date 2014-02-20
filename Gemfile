@@ -33,6 +33,8 @@ gem 'jquery-rails'
 # Fake Data to Seed
 gem 'faker'
 
+gem 'cancan'
+
 # Authentication 
 gem 'devise'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
