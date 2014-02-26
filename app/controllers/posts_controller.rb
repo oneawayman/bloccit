@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
  def create
   @topic = Topic.find(params[:topic_id])
-  @post = current_user.posts.build(post_params[:post])
+  @post = current_user.posts.build(post_params)
   @post.topic = @topic
   authorize! :create, @post, message: "You need to be signed up to do that"
   if @post.save
