@@ -48,6 +48,12 @@ gem 'jbuilder', '~> 1.2'
 # Exception Handler
 gem 'appsignal'
 
+# File Uploading
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+gem "figaro", git: "https://github.com/laserlemon/figaro.git"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
