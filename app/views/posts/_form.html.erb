@@ -19,6 +19,12 @@
     <%= f.label :body, class: 'control-label' %>
     <div class="controls">
       <%= f.text_area :body, rows: 8 %>
+       <%= control_group_tag(post.errors[:image]) do %>
+     <%= f.label :image, class: 'control-label' %>
+     <div class="controls">
+       <%= f.file_field :image %>
+     </div>
+  <% end %>
     </div>
   <% end %>
   <div class="control-group">
