@@ -34,7 +34,7 @@ def edit
   def update
     @post = Post.find(params[:id])
     authorize! :update, @post, message: "You need to own the post to edit it."
-    if @post.update_attributes(post_params[:post])
+    if @post.update_attributes(post_params)
       redirect_to [@post.topic, @post]
       flash[:notice] = "Post was updated."
     else
