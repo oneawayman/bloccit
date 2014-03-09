@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :posts
+  has_many :posts, :comments
 
   before_create :set_member
 
