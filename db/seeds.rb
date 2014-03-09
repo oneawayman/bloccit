@@ -27,14 +27,14 @@ u.skip_confirmation!
 u.save
 
 topics = []
-15.times do
+40.times do
   topics << Topic.create(
     name: Faker::Lorem.words(rand(1..10)).join(" "), 
     description: Faker::Lorem.paragraph(rand(1..4))
   )
 end
 
-rand(5..12).times do
+rand(5..25).times do
     topic = topics.first # getting the first topic here
     p = u.posts.create(
       topic: topic,
@@ -63,7 +63,7 @@ rand(4..10).times do
   # The `skip_confirmation!` method sets the confirmation date
   # to avoid sending an email. The `save` method updates the database.
 
-  rand(5..12).times do
+  rand(5..30).times do
     p = u.posts.create(
       title: Faker::Lorem.words(rand(1..10)).join(" "), 
       body: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
