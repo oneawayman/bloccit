@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = @topic.Post.find(params[:post_id])
     @comment = @post.comments
-    @comment = current_user.comments.build(params[:comment])
+    @comment = current_user.comments.build(comment_params)
     @comment.post = @post
 
   authorize! :create, @comment, message: "You need to be signed up to do that"
@@ -15,5 +15,11 @@ class CommentsController < ApplicationController
       render 'posts/show'
     end
   end
+
+private
+def comment_params
+    params.require(:comment).permit(:body, :image)
+  end
+
 end
 
