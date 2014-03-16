@@ -57,6 +57,9 @@ gem "figaro", git: "https://github.com/laserlemon/figaro.git"
 # Pagination
 gem 'will_paginate', '~> 3.0'
 
+# Facebook Auth
+gem 'omniauth-facebook'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
